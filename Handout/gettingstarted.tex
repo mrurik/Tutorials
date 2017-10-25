@@ -21,7 +21,7 @@
 
 \subsection{Installation}
 
-Before we get started we will install OpenMS and KNIME. If you take part in a training session you will have likely received an USB stick from us that contains the required data and software. If we provide laptops with the software you may of course skip the installation process and continue reading the next section.
+Before we get started we will install OpenMS and KNIME. Your training computer will likely have both programs pre-installed. In this case you can skip the installation process and continue reading the next section.
 
 \subsubsection{Installation from the OpenMS USB stick}
 Please choose the directory that matches your operating system and execute the installer. 
@@ -30,7 +30,7 @@ For example for \textbf{Windows} you call
 \begin{itemize}
   \item the OpenMS installer: \directory{\WindowsOpenMSInstallerName}
   \item the KNIME installer:  \directory{\WindowsKnimeInstallerName}
-  \item OpenMS prerequisites (Windows-only): After installation, before your first use of the OpenMS plugin in KNIME you will be asked to download it automatically if certain requirements are not found in your Windows registry. Alternatively, you can get a bundled version \href{\WindowsPrerequisitesLink}{here} or on the OpenMS USB stick (\directory{\WindowsOpenMSPrereqInstallerName}).
+  \item OpenMS prerequisites (Windows-only): After installation, before your first use of the OpenMS plugin in KNIME you will be asked to download it automatically if certain requirements are not found in your Windows registry. Alternatively, you can get a bundled version \href{\WindowsPrerequisitesLink}{here} or in the example data folder (\directory{\WindowsOpenMSPrereqInstallerName}).
 \end{itemize}
 
 on \textbf{macOS} you call
@@ -66,7 +66,7 @@ However, we provide a small raw file so you can try the important step of raw da
 To convert raw data to mzML using ProteoWizard you can either use MSConvertGUI (a graphical user interface) or msconvert (a simple command line tool). Both tools are available in:
 \newline
 \directory{\WindowsDefaultPWizFolder}.
-You can find a small RAW file on the USB stick:
+You can find a small RAW file in the folder:
 \directory{Example\_Data / Introduction / datasets / raw}.
 
 \subsubsection{MSConvertGUI}
@@ -119,15 +119,9 @@ OpenMS provides a convenient viewer for some of the data: \OPENMSTOOL{TOPPView}.
 We will guide you through some of the basic features of \OPENMSTOOL{TOPPView}. Please familiarize yourself with the key controls and visualization methods.
 We will make use of these later throughout the tutorial. Let's start with a first look at one of the files of our tutorial data set. Conceptually, there are no differences in visualizing metabolomic or proteomic data. Here, we inspect a simple proteomic measurement:
 
-\begin{figure}[!htb]
-\includegraphics[width=0.75\textwidth]{graphics/introduction/3dview.png}
-\caption{3D representation of the measured spectra, signals of eluting peptides are colored according to the raw peak intensities.}
-\label{fig:toppview_3D}
-\end{figure}
-
 \begin{itemize}
 \item Start \OPENMSTOOL{TOPPView} (see \textbf{Windows}' Start-Menu or \directory{Applications/OpenMS-2.3.0} on \textbf{macOS})
-\item Go to \menu{File > Open File}, navigate to the directory where you copied the contents of the USB stick to,
+\item Go to \menu{File > Open File}, navigate to the directory where you copied the example data to,
       and select
       \directory{Example\_Data / Introduction / datasets / small / velos005614.mzML}
       . This file contains only a reduced LC-MS map \footnote{only a selected RT and m/z range
@@ -168,15 +162,12 @@ We will make use of these later throughout the tutorial. Let's start with a firs
 \item In \OPENMSTOOL{TOPPView} you can also execute TOPP tools. Go to
 			\menu{Tools > Apply tool (whole layer)} and choose a TOPP tool (e.g., \OPENMSTOOL{FileInfo}) and
 			inspect the results.
-\end{itemize}
-
-\noindent Dependent on your data MS/MS spectra can be visualized as well (see Fig.\ref{fig:ms2}) . You can do so, by double-click on the MS/MS spectrum shown in scan view.
-\newline
-\begin{figure}[!htb]
-\includegraphics[width=0.75\textwidth]{graphics/introduction/ms2_introduction.png}
-\caption{MS/MS spectrum}
-\label{fig:ms2}
+\begin{figure}
+\includegraphics[width=0.75\textwidth]{graphics/introduction/3dview.png}
+\caption{3D representation of the measured spectra, signals of eluting peptides are colored according to the raw peak intensities.}
+\label{fig:toppview_3D}
 \end{figure}
+\end{itemize}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -199,7 +190,7 @@ the most important concepts will also be reviewed in this tutorial.
 
 \subsubsection{Plugin and dependency installation}
 \label{Install_plugins}
-\note{If you chose the KNIME installer that contains all community contributions, or you received the full installer on our USB Stick you can skip this section. This is usually the preferred way but only works for stable releases that were available at the time the full release of KNIME was created. For bleeding edge functionality (as provided through the KNIME nightly community contributions or in the case we cover prereleases of OpenMS) you need to perform the actions below to download the plugin from official update sites.}
+\note{If you chose the KNIME installer that contains all community contributions, or you received the full installer you can skip this section. This is usually the preferred way but only works for stable releases that were available at the time the full release of KNIME was created. For bleeding edge functionality (as provided through the KNIME nightly community contributions or in the case we cover prereleases of OpenMS) you need to perform the actions below to download the plugin from official update sites.}
 Before we can start with the tutorial we need to install all the required extensions for KNIME. Since KNIME 3.2.1 the program automatically
 detects missing plugins when you open a workflow but to make sure that the right source for OpenMS is chosen, please follow the instructions here.
 First, we install some additional extensions that are required by our OpenMS nodes or used in the Tutorials e.g. for visualization and file handling.
@@ -406,7 +397,7 @@ To export a workflow, select it in the Workflow Explorer and select \menu{File >
 KNIME will export workflows as a \textit{knwf} file containing all the information on nodes, their connections, and their parameter configuration.
 Those \textit{knwf} files can again be imported by selecting \menu{File > Import KNIME Workflow...}.
 
-\note{For your convenience we added all workflows discussed in this tutorial to the \directory{Workflows} folder on the USB Stick. Additionally, the
+\note{For your convenience we added all workflows discussed in this tutorial to the \directory{Workflows} folder in the example data. Additionally, the
 workflow files can be found on our \href{https://github.com/OpenMS/Tutorials}{GitHub repository}.
 If you want to check your own workflow by comparing it to the solution or got stuck, simply import the full workflow from the corresponding \textit{knwf} file.}
 
